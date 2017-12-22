@@ -14,7 +14,7 @@ import pickle
 from time import sleep
 
 # 输入文字，想draw哪个汉字？
-word = input('想draw哪个汉字？')
+word = input('想draw哪个汉字:')
 
 # 读
 with open('Chinese_strokes', 'rb') as f:
@@ -50,7 +50,7 @@ sleep(2)
 # 笔尖接触桌面
 print('解锁电机')
 swift.set_servo_detach()
-input('设置好毛笔')
+input('笔尖接触桌面')
 swift.set_buzzer()
 
 print('解锁电机')
