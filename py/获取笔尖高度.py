@@ -30,7 +30,7 @@ swift.set_buzzer()
 print('解锁电机')
 swift.set_servo_attach()
 pos=swift.get_position()
-print('pos',pos)
+print('pos',pos)#pos [98.39, 9.69, 37.51]
 
 print('重置机械臂')
 swift.set_buzzer()
