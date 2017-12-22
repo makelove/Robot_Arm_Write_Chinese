@@ -12,8 +12,8 @@ import pickle
 from time import sleep
 
 # 读
-with open('Chinese_strokes', 'rb') as f:
-    data = pickle.load(f)
+# with open('Chinese_strokes', 'rb') as f:
+#     data = pickle.load(f)
 
 #获取笔尖高度
 

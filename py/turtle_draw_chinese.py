@@ -18,7 +18,7 @@ with open('Chinese_strokes', 'rb') as f:
 
 turtle.screensize(100, 100, "white")
 turtle.up()
-sleep(1)
+sleep(4)
 #
 # sentense = '中央经济工作会议精神出炉'
 sentense = '一二手房'
