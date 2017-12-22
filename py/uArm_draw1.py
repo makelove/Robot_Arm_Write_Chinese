@@ -29,6 +29,20 @@ sleep(2)
 #
 
 # 获取笔尖高度
+# print('解锁电机')
+# swift.set_servo_detach()
+# input('设置好毛笔')
+# swift.set_buzzer()
+#
+# print('解锁电机')
+# swift.set_servo_attach()
+# pos = swift.get_position()
+# print('pos', pos)  # pos [98.39, 9.69, 37.51]
+# pen_height = pos[2]
+
+#
+# sleep(2)
+# 笔尖接触桌面
 print('解锁电机')
 swift.set_servo_detach()
 input('设置好毛笔')
@@ -37,8 +51,10 @@ swift.set_buzzer()
 print('解锁电机')
 swift.set_servo_attach()
 pos = swift.get_position()
-print('pos', pos)  # pos [98.39, 9.69, 37.51]
-pen_height = pos[2]
+print('pos', pos)  # pos [225.41, 16.28, 38.16]
+pen_tip_height = pos[2]
+center={'x':pos[0],'y':pos[1],'z':pen_tip_height+20}
+#
 
 # 输入文字，想draw哪个汉字？
 word = input('想draw哪个汉字？')
@@ -54,12 +70,13 @@ strokes = data[word]#汗
  [{'x': 588.0, 'y': 216.0}, {'x': 595.0, 'y': 817.0}]]
 '''
 #中心点 x100,y0
-center={'x':100,'y':0,'z':pen_height+20}
+# center={'x':100,'y':0,'z':pen_height+20}
 
-swift.set_position(x=center['x'],y=center['y'],z=center['z'],wait=True)
+# swift.set_position(x=center['x'],y=center['y'],z=center['z'],wait=True)
 sleep(2)
 
 # uArm机械臂运动
+swift.set_position(z=pen_tip_height+20,wait=True)
 for st in strokes:
     print('------')
     # turtle.goto(st[0]['x'] / 10, -st[0]['y'] / 10)
@@ -70,8 +87,18 @@ for st in strokes:
         # turtle.goto(po['x'] / 10, -po['y'] / 10)
         x=center['x']+po['x'] / 10
         y=center['y']+po['y'] / 10
-        swift.set_position(x=x,y=y,z=pen_height - 10, wait=True)
+        swift.set_position(x=x,y=y,z=pen_tip_height, wait=True)
         sleep(0.5)
     # turtle.up()
-    swift.set_position(z=pen_height+30,wait=True)
+    swift.set_position(z=pen_tip_height+20,wait=True)
     sleep(0.5)
+
+
+#
+sleep(5)
+print('重置机械臂')
+swift.set_buzzer()
+swift.reset(x=103,
+            y=0,
+            z=42,
+            speed=800)
