@@ -6,6 +6,7 @@
 
 """
 turtle_draw_chinese.py:
+使用turtle库画中文
 """
 import pickle
 import turtle
@@ -37,4 +38,4 @@ for word in sentense:
             turtle.goto(po['x'] / 10, -po['y'] / 10)
         turtle.up()
     sleep(0.5)
-sleep(5)
+sleep(15)

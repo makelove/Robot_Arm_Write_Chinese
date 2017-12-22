@@ -10,4 +10,9 @@
 - 开发环境
     - python 3.6
     - pyuf
+        - git clone https://github.com/uArm-Developer/pyuf.git
+        - cd pyuf
+        - python3 setup.py install
     - 机械臂：uArm Swift Pro
+- 运行
+    - uArm_draw1.py

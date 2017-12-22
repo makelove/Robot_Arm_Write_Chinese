@@ -77,7 +77,7 @@ for cha in d['dictionary']['character']:#[20:30]:
         stro=[]
         for point in stroke['point']:
             print(point['@x'], point['@y'])
-            po={'x':float(point['@x']),'y':float(point['@y'])}
+            po={'x': float(point['@x']),'y':float(point['@y'])}
             stro.append(po)
         value.append(stro)
 
@@ -89,7 +89,7 @@ for cha in d['dictionary']['character']:#[20:30]:
 import pickle
 #写
 with open('Chinese_strokes','wb') as f:
-    pickle.dump(Chinese_strokes, f)
+    pickle.dump(Chinese_strokes, f)#序列化
 
 
 #读
