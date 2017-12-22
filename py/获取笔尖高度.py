@@ -13,8 +13,8 @@ from time import sleep
 from uf.wrapper.swift_api import SwiftAPI
 from uf.utils.log import *
 
-logger_init(logging.VERBOSE)
-# logger_init(logging.INFO)
+# logger_init(logging.VERBOSE)
+logger_init(logging.INFO)
 
 print('setup swift ...')
 
@@ -29,9 +29,22 @@ swift.set_buzzer()
 
 print('解锁电机')
 swift.set_servo_attach()
-pos=swift.get_position()
-print('pos',pos)#pos [98.39, 9.69, 37.51]
+pos = swift.get_position()
+print('pos', pos)  # pos [99.02, -1.37, 37.65]
 
+sleep(2)
+# 笔尖接触桌面
+print('解锁电机')
+swift.set_servo_detach()
+input('设置好毛笔')
+swift.set_buzzer()
+
+print('解锁电机')
+swift.set_servo_attach()
+pos = swift.get_position()
+print('pos', pos)  # pos [225.41, 16.28, 38.16]
+
+sleep(5)
 print('重置机械臂')
 swift.set_buzzer()
 swift.reset(x=103,

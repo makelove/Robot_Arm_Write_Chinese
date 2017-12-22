@@ -44,7 +44,7 @@ pen_height = pos[2]
 word = input('想draw哪个汉字？')
 
 # 修改坐标系
-strokes = data[word]
+strokes = data[word]#汗
 '''
 [[{'x': 223.0, 'y': 131.0}, {'x': 350.0, 'y': 214.0}],
  [{'x': 125.0, 'y': 309.0}, {'x': 238.0, 'y': 416.0}],
@@ -53,5 +53,25 @@ strokes = data[word]
  [{'x': 343.0, 'y': 403.0}, {'x': 895.0, 'y': 338.0}],
  [{'x': 588.0, 'y': 216.0}, {'x': 595.0, 'y': 817.0}]]
 '''
+#中心点 x100,y0
+center={'x':100,'y':0,'z':pen_height+20}
+
+swift.set_position(x=center['x'],y=center['y'],z=center['z'],wait=True)
+sleep(2)
 
 # uArm机械臂运动
+for st in strokes:
+    print('------')
+    # turtle.goto(st[0]['x'] / 10, -st[0]['y'] / 10)
+    # turtle.down()
+
+    for po in st:
+        print(po['x'], po['y'])
+        # turtle.goto(po['x'] / 10, -po['y'] / 10)
+        x=center['x']+po['x'] / 10
+        y=center['y']+po['y'] / 10
+        swift.set_position(x=x,y=y,z=pen_height - 10, wait=True)
+        sleep(0.5)
+    # turtle.up()
+    swift.set_position(z=pen_height+30,wait=True)
+    sleep(0.5)
