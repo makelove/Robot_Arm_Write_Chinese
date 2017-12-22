@@ -6,6 +6,8 @@
         - handwriting-zh_CN-gb2312.xml
     - 汉字笔顺查询https://github.com/HeHongling/StrokeOrder
         - strokes-sqlite.db
+    - 汉字笔顺练习打印
+        - https://github.com/charlee/charprac
         
 - 开发环境
     - python 3.6
