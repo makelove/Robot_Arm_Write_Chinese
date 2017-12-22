@@ -8,6 +8,8 @@
         - strokes-sqlite.db
     - 汉字笔顺练习打印
         - https://github.com/charlee/charprac
+
+        
         
 - 开发环境
     - python 3.6
@@ -19,3 +21,7 @@
 - 运行
     - GCODE使用Printrun打开
     - uArm_draw1.py
+    
+- 总结
+    - 汉字总数：6763
+    - 没有边旁部首名称，TODO
