@@ -53,12 +53,12 @@ swift.set_servo_detach()
 input('笔尖接触桌面')
 swift.set_buzzer()
 
-print('解锁电机')
+print('锁上电机')
 swift.set_servo_attach()
 pos = swift.get_position()
 print('pos', pos)  # pos [225.41, 16.28, 38.16]
 pen_tip_height = pos[2]
-# center={'x':pos[0],'y':pos[1],'z':pen_tip_height+20}
+center={'x':pos[0],'y':pos[1],'z':pen_tip_height+20}
 #
 
 
@@ -74,7 +74,7 @@ strokes = data[word]  # 汗
  [{'x': 588.0, 'y': 216.0}, {'x': 595.0, 'y': 817.0}]]
 '''
 # 中心点 x100,y0
-center = {'x': 150, 'y': 0, 'z': pen_tip_height + 20}
+# center = {'x': 150, 'y': 0, 'z': pen_tip_height + 20}
 
 # swift.set_position(x=center['x'],y=center['y'],z=center['z'],wait=True)
 sleep(2)
@@ -92,16 +92,15 @@ for st in strokes:
         x = center['x'] + po['x'] / 10
         y = center['y'] + po['y'] / 10
         swift.set_position(x=x, y=y, z=pen_tip_height-3, wait=True)
+        # swift.set_position(x=x, y=y, z=19, wait=True)#因为pen_tip_height每次获取position都不一样,所以只好指定坐标,自己获取
         sleep(0.5)
     # turtle.up()
     swift.set_position(z=pen_tip_height + 20, wait=True)
     sleep(0.5)
 
 #
-sleep(5)
+sleep(3)
 print('重置机械臂')
 swift.set_buzzer()
-swift.reset(x=103,
-            y=0,
-            z=42,
-            speed=800)
+swift.reset(x=103,y=0,z=42,speed=1000)
+# swift.reset()
