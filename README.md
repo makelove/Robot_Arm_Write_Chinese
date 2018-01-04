@@ -19,7 +19,7 @@
         - python3 setup.py install
     - 机械臂：uArm Swift Pro
 - 运行
-    - GCODE使用Printrun打开
+    - long_0001.GCODE使用Printrun打开
     - uArm_draw1.py
     
 - 总结
