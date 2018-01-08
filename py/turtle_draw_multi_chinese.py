@@ -19,6 +19,7 @@ with open('Chinese_strokes', 'rb') as f:
     data = pickle.load(f)
 
 center_point = (20, 210)  # 中心点为任意点
+# turtle.setworldcoordinates(llx, lly, urx, ury)#TODO
 
 turtle.screensize(100, 100, "white")
 # turtle.setpos(-100, 0)
@@ -63,6 +64,8 @@ for i, word in enumerate(sentense):
             turtle.goto(x_pos + po['x'] / 10, -po['y'] / 10 + center_point[1])
         turtle.up()
     # counter += 1
-    sleep(0.5)
+    sleep(0.1)
+    # turtle.delay(500)#不行
 
 sleep(15)
+# turtle.delay(15000)
