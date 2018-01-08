@@ -8,6 +8,7 @@
 turtle_draw_chinese.py:
 使用turtle库画中文
 """
+
 import pickle
 import turtle
 from time import sleep
