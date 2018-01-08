@@ -12,22 +12,24 @@ turtle_draw_multi_chinese.py:
 import pickle
 import turtle
 from time import sleep
-from utils import draw_rect
+from utils import draw_rect, draw_line
 
 # 读
 with open('Chinese_strokes', 'rb') as f:
     data = pickle.load(f)
 
 turtle.screensize(100, 100, "white")
-turtle.setpos(-100, 0)
-turtle.down()
-turtle.goto(100, 0)
-turtle.up()
+# turtle.setpos(-100, 0)
+# turtle.down()
+# turtle.goto(100, 0)
+# turtle.up()
+draw_line(-100, 0, 100, 0)
 #
-turtle.setpos(0, -100)
-turtle.down()
-turtle.goto(0, 100)
-turtle.up()
+# turtle.setpos(0, -100)
+# turtle.down()
+# turtle.goto(0, 100)
+# turtle.up()
+draw_line(0, -100, 0, 100)
 
 sleep(2)
 #
