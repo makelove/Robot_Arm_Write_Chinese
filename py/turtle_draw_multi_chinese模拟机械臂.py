@@ -18,23 +18,11 @@ from utils import draw_rect, draw_line
 with open('Chinese_strokes', 'rb') as f:
     data = pickle.load(f)
 
-center_point = (20, 210)  # 中心点为任意点
-# turtle.setworldcoordinates(llx, lly, urx, ury)#TODO
-
 turtle.screensize(100, 100, "white")
-# turtle.setpos(-100, 0)
-# turtle.down()
-# turtle.goto(100, 0)
-# turtle.up()
-draw_line(-100 + center_point[0], 0 + center_point[1], 100 + center_point[0], 0 + center_point[1])
-#
-# turtle.setpos(0, -100)
-# turtle.down()
-# turtle.goto(0, 100)
-# turtle.up()
-draw_line(0 + center_point[0], -100 + center_point[1], 0 + center_point[0], 100 + center_point[1])
+draw_line(-100, 0, 100, 0)
+draw_line(0, -100, 0, 100)
 
-sleep(2)
+sleep(1)
 #
 # sentense = '中央经济工作会议精神出炉'
 # sentense = '一二手房车'
@@ -43,26 +31,40 @@ num = len(sentense)
 width = 100  # 一个字的宽度 100*100
 # all_width = width * num  # 总长度
 
-
+center = (20, 0)
 
 # counter = 0
 for i, word in enumerate(sentense):
     # turtle.clear()
-    x_pos = width * (i - num / 2) + center_point[0]
-    draw_rect(x=x_pos, y=0 + center_point[1], width=width)
+    # x_pos = width * (i - num / 2)
+    x_pos = 0 + center[0]
+    y_pos = width * (i - num / 2 + 1) + center[1]
+    # draw_rect(x=x_pos, y=0, width=width)
+    draw_rect(x=x_pos, y=y_pos, width=width)
 
     print('----------', word)
     strokes = data[word]
-    for st in strokes:
+    for st in strokes:  # 需要把字扭转方向，映射
         print('--')
 
-        turtle.goto(x_pos + st[0]['x'] / 10, -st[0]['y'] / 10 + center_point[1])
-        turtle.down()
+        for p1, p2 in zip(st[0:-1], st[1:]):
+            x1 = x_pos + p1['x'] / 10
+            y1 = y_pos - p1['y'] / 10
+            x2 = x_pos + p2['x'] / 10
+            y2 = y_pos - p2['y'] / 10
+            draw_line(x1, y1, x2, y2)
 
-        for po in st:
-            print(x_pos + po['x'], po['y'] + center_point[1])
-            turtle.goto(x_pos + po['x'] / 10, -po['y'] / 10 + center_point[1])
-        turtle.up()
+        # turtle.goto(y_pos - st[0]['y'] / 10, x_pos + st[0]['x'] / 10)
+        # turtle.down()
+        #
+        # for po in st:
+        #     # print(x_pos + po['x'], po['y'])
+        #     xc = y_pos - po['y'] / 10
+        #     yc = x_pos + po['x'] / 10
+        #
+        #
+        #     turtle.goto(xc, yc)
+        # turtle.up()
     # counter += 1
     sleep(0.1)
     # turtle.delay(500)#不行

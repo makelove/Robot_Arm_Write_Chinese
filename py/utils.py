@@ -17,7 +17,7 @@ def draw_line(x1, y1, x2, y2):
     turtle.down()
     turtle.goto(x2, y2)
     turtle.up()
-    sleep(0.1)
+    sleep(0.05)
 
 
 def draw_rect(x=0, y=0, width=100):

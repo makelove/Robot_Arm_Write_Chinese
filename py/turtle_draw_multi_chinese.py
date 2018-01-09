@@ -18,7 +18,8 @@ from utils import draw_rect, draw_line
 with open('Chinese_strokes', 'rb') as f:
     data = pickle.load(f)
 
-center_point = (20, 210)  # 中心点为任意点
+center_point = (0, 0)
+# center_point = (20, 210)  # 中心点为任意点
 # turtle.setworldcoordinates(llx, lly, urx, ury)#TODO
 
 turtle.screensize(100, 100, "white")
