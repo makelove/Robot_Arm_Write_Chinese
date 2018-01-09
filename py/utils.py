@@ -12,6 +12,7 @@ from time import sleep
 
 
 def draw_line(x1, y1, x2, y2):
+    print(x1, y1, '\t', x2, y2)
     turtle.up()
     turtle.setpos(x1, y1)
     turtle.down()

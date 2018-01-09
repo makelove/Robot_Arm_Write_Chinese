@@ -48,23 +48,18 @@ for i, word in enumerate(sentense):
         print('--')
 
         for p1, p2 in zip(st[0:-1], st[1:]):
-            x1 = x_pos + p1['x'] / 10
-            y1 = y_pos - p1['y'] / 10
-            x2 = x_pos + p2['x'] / 10
-            y2 = y_pos - p2['y'] / 10
+            # x1 = x_pos + p1['x'] / 10
+            # y1 = y_pos - p1['y'] / 10
+            x1 = x_pos + p1['y'] / 10
+            y1 = y_pos + p1['x'] / 10 - width
+
+            # x2 = x_pos + p2['x'] / 10
+            # y2 = y_pos - p2['y'] / 10
+            x2 = x_pos + p2['y'] / 10
+            y2 = y_pos + p2['x'] / 10 - width
+
             draw_line(x1, y1, x2, y2)
 
-        # turtle.goto(y_pos - st[0]['y'] / 10, x_pos + st[0]['x'] / 10)
-        # turtle.down()
-        #
-        # for po in st:
-        #     # print(x_pos + po['x'], po['y'])
-        #     xc = y_pos - po['y'] / 10
-        #     yc = x_pos + po['x'] / 10
-        #
-        #
-        #     turtle.goto(xc, yc)
-        # turtle.up()
     # counter += 1
     sleep(0.1)
     # turtle.delay(500)#不行
