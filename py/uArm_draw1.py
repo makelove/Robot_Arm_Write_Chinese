@@ -26,7 +26,6 @@ from uf.utils.log import *
 
 logger_init(logging.VERBOSE)
 # logger_init(logging.INFO)
-
 print('setup swift ...')
 swift = SwiftAPI()
 print('sleep 2 sec ...')
