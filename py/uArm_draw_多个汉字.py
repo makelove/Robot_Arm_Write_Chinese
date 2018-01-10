@@ -13,8 +13,8 @@ from time import sleep
 
 # 输入文字，想draw哪个汉字？
 # word = input('想draw哪个汉字:')
-# sentense = '新年快乐'
-sentense = '万二三丁'
+sentense = '新年快乐'
+# sentense = '万二三丁'
 num = len(sentense)
 width = 70  # uarm
 # width = 100  # uarm
@@ -81,7 +81,7 @@ for i, word in enumerate(sentense):
             # swift.set_position(x=x, y=y, z=19, wait=True)#因为pen_tip_height每次获取position都不一样,所以只好指定坐标,自己获取
             sleep(0.5)
         # turtle.up()
-        swift.set_position(z=pen_tip_height + 40, wait=True)
+        swift.set_position(z=pen_tip_height + 20, wait=True)
         sleep(0.5)
 
     # counter += 1
