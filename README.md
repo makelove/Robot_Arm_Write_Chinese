@@ -1,6 +1,10 @@
 # Robot_Arm_Write_Chinese
 使用uArm Swift Pro写中文-毛笔字
 
+- 最新
+    - 毛笔字：新年快乐
+        - py/uArm_draw_多个汉字.py
+
 - 参考
     - https://github.com/huzheng001/stroke-editor
         - handwriting-zh_CN-gb2312.xml
