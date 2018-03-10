@@ -31,9 +31,11 @@
         - python3 setup.py install
     - 机械臂：uArm Swift Pro
 - 运行
-    - long_0001.GCODE使用Printrun打开
+    - long_0001.GCODE使用Printrun打开。USB线连接uArm
+        - 这是一个'龙'字，已经写好了笔划，运行即可
     - uArm_draw1.py
+        - 这是我自己写的程序。可以写任何汉字。
     
 - 总结
     - 汉字总数：6763
-    - 没有边旁部首名称，TODO
+    - TODO: 没有边旁部首名称
